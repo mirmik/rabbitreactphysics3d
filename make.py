@@ -27,7 +27,7 @@ licant.install.install_library(
 	tgt="install",
 	uninstall="uninstall",
 	libtgt=["librabbitreactphysics3d.so", "librabbitreactphysics3d.a"],
-	hroot="rabbit",
-	headers="rabbit")
+	hroot="rabbitreactphysics3d",
+	headers="rabbitreactphysics3d")
 
 licant.ex("libs")

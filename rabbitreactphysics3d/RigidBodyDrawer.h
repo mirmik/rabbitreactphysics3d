@@ -1,3 +1,6 @@
+#ifndef RIGID_BODY_DRAWER_H
+#define RIGID_BODY_DRAWER_H
+
 #include <rabbit/mesh/mesh.h>
 #include <rabbit/mesh/primitives.h>
 #include <rabbit/opengl/qtscene.h>
@@ -34,3 +37,5 @@ public:
                     rabbit::react_cast(m_body->getTransform()).to_mat4());
     }
 };
+
+#endif
