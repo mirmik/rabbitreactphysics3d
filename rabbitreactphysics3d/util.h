@@ -2,6 +2,20 @@
 #define RABBIT_REACTPHYSICS_UTIL_H
 
 #include <reactphysics3d/reactphysics3d.h>
+#include <nos/fprint.h>
+
+static inline ralgo::pose3<float> get_pose(reactphysics3d::RigidBody* body) 
+{
+    return rabbit::react_cast(body->getTransform());
+}
+
+static inline std::string get_pose_as_json(reactphysics3d::RigidBody* body) 
+{
+    auto pose = rabbit::react_cast(body->getTransform());
+    auto lin = pose.lin;
+    auto qang = pose.ang;
+    return nos::format("{{'lin':[{},{},{}],'qang':[{},{},{},{}]}\n", lin.x, lin.y, lin.z, qang.x, qang.y, qang.z, qang.w);
+}
 
 static inline void set_joint_torque(reactphysics3d::HingeJoint *joint,
                                     float torque)

@@ -34,7 +34,8 @@ public:
     void draw_on(rabbit::view &v) override
     {
         v.draw_mesh(m_mesh,
-                    rabbit::react_cast(m_body->getTransform()).to_mat4());
+                    rabbit::react_cast(m_body->getTransform()).to_mat4(),
+                    {0, 1, 0, 1});
     }
 };
 
